@@ -1,0 +1,61 @@
+
+# ==============================
+# Python / FastAPI
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# Node.js / Next.js
+# ==============================
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==============================
+# Environment variables / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# ==============================
+# Uploaded files / Generated data
+# ==============================
+uploads/
+storage/
+*.db
+
+# ==============================
+# Operating System
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# IDE
+# ==============================
+.vscode/
+.idea/
