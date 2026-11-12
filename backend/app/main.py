@@ -1,8 +1,14 @@
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.core.database import Base, engine
+from app.models import Document
 from app.core.database import test_db_connection
+from app.api.documents import router as documents_router
+
+
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="KnowBase API",
@@ -18,6 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(documents_router)
 
 @app.get("/")
 def home():
