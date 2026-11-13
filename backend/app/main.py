@@ -11,8 +11,8 @@ from app.api.documents import router as documents_router
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="KnowBase API",
-    description="AI-powered personal knowledge assistant",
+    title="ContextPapa",
+    description="Your AI-powered personal knowledge assistant",
     version="1.0.0"
 )
 

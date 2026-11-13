@@ -2,7 +2,7 @@
 services:
   db:
     image: pgvector/pgvector:pg16
-    container_name: knowbase-db
+    container_name: contextpapa-db
     restart: unless-stopped
 
     environment:

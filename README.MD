@@ -1,8 +1,8 @@
-# KnowBase
+# ContextPapa
 
 **An AI-powered personal knowledge assistant that helps you store, search, and interact with your documents.**
 
-KnowBase is a full-stack application designed to let users upload documents, retrieve relevant information, and ask questions about their personal knowledge base. The long-term goal is to implement Retrieval-Augmented Generation (RAG) with semantic search and source citations.
+ContextPapa is a full-stack application designed to let users upload documents, retrieve relevant information, and ask questions about their personal knowledge base. The long-term goal is to implement Retrieval-Augmented Generation (RAG) with semantic search and source citations.
 
 ## Tech Stack
 
@@ -38,7 +38,7 @@ KnowBase is a full-stack application designed to let users upload documents, ret
 ## Project Structure
 
 ```text
-KnowBase/
+ContextPapa/
 │
 ├── frontend/                 # Next.js frontend
 │
@@ -77,8 +77,8 @@ Install the following before running the project:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/KnowBase.git
-cd KnowBase
+git clone https://github.com/YOUR_USERNAME/ContextPapa.git
+cd ContextPapa
 ```
 
 ### 2. Start PostgreSQL using Docker
@@ -106,8 +106,8 @@ The database runs on:
 ```text
 Host: localhost
 Port: 5432
-Database: knowbase_db
-Username: knowbase
+Database: ContextPapa_db
+Username: ContextPapa
 ```
 
 ### 3. Configure the backend
@@ -144,7 +144,7 @@ copy .env.example .env
 Configure the database connection in `backend/.env`:
 
 ```env
-DATABASE_URL=postgresql+psycopg://knowbase:knowbase_dev_password@localhost:5432/knowbase_db
+DATABASE_URL=postgresql+psycopg://ContextPapa:ContextPapa_dev_password@localhost:5432/ContextPapa_db
 ```
 
 Replace the credentials if you have changed the Docker Compose database configuration.
@@ -248,7 +248,7 @@ docker compose logs -f db
 Open PostgreSQL shell:
 
 ```bash
-docker exec -it knowbase-db psql -U knowbase -d knowbase_db
+docker exec -it ContextPapa-db psql -U ContextPapa -d ContextPapa_db
 ```
 
 Check database tables:
@@ -305,10 +305,16 @@ Exit PostgreSQL:
 
 ## Project Goal
 
-The goal of KnowBase is to build a practical AI knowledge assistant that combines document processing, vector search, and Large Language Models to provide accurate, context-aware answers from user-uploaded documents.
+The goal of ContextPapa is to build a practical AI knowledge assistant that combines document processing, vector search, and Large Language Models to provide accurate, context-aware answers from user-uploaded documents.
 
 This project is being developed incrementally to explore backend engineering, database design, vector embeddings, and Retrieval-Augmented Generation.
 
 ---
 
 **Status:** Under Development 🚧
+
+
+Important: Do not change these database values in your .env or Docker Compose configuration:
+- Database: knowbase_db
+- Username: knowbase
+- Password: knowbase_dev_password
