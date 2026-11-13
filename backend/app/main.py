@@ -2,10 +2,9 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import Base, engine
-from app.models import Document
 from app.core.database import test_db_connection
 from app.api.documents import router as documents_router
-
+from app.models import Document, Chunk
 
 
 Base.metadata.create_all(bind=engine)
