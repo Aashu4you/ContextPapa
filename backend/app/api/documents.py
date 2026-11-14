@@ -12,6 +12,7 @@ from app.services.chunking_service import chunk_text
 from app.services.chunk_service import save_chunks
 
 
+
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
 UPLOAD_DIR = "uploads"

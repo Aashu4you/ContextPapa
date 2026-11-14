@@ -11,7 +11,7 @@ from sqlalchemy import (
     func
 )
 from sqlalchemy.orm import Mapped, mapped_column
-
+from pgvector.sqlalchemy import Vector
 from app.core.database import Base
 
 
@@ -48,4 +48,9 @@ class Chunk(Base):
     created_at: Mapped[DateTime] = mapped_column(
         DateTime(timezone=True),
         server_default=func.now()
+    )
+    
+    embedding: Mapped[list | None] = mapped_column(
+    Vector(384),
+    nullable=True
     )
