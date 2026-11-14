@@ -6,7 +6,7 @@ from app.core.database import test_db_connection
 from app.api.documents import router as documents_router
 from app.models import Document, Chunk
 from app.api.search import router as search_router
-
+from app.api.chat import router as chat_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -26,6 +26,7 @@ app.add_middleware(
 
 app.include_router(documents_router)
 app.include_router(search_router)
+app.include_router(chat_router)
 
 @app.get("/")
 def home():
