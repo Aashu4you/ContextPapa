@@ -9,7 +9,10 @@ from app.core.database import get_db
 from app.models import Document
 from app.services.pdf_service import extract_text_from_pdf
 from app.services.chunking_service import chunk_text
-from app.services.chunk_service import save_chunks
+from app.services.chunk_service import (
+    save_chunks,
+    generate_and_save_embeddings
+)
 
 
 
@@ -173,6 +176,14 @@ def process_document(
             chunks
         )
 
+        embedded_count = generate_and_save_embeddings(
+        db,
+        document.id
+        )
+
+        if saved_count != embedded_count:
+            raise Exception("Embedding generation failed")
+
         document.status = "processed"
         db.commit()
 
@@ -181,6 +192,7 @@ def process_document(
             "document_id": str(document.id),
             "total_pages": len(pages),
             "total_chunks": saved_count,
+            "total_embeddings": embedded_count,
             "status": document.status
         }
 
