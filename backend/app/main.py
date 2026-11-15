@@ -24,6 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# so this is the main file for the purpose of tomfoolery and bastardnessssssssssssssss
 app.include_router(documents_router)
 app.include_router(search_router)
 app.include_router(chat_router)
